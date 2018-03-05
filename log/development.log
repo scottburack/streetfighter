@@ -562,3 +562,483 @@ Processing by UsersController#create as HTML
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/superheroes?utf8=%E2%9C%93&query=FLIGHT&commit=Search" for 127.0.0.1 at 2018-03-05 16:17:55 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/superheroes"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/characters/new" for 127.0.0.1 at 2018-03-05 16:18:16 -0500
+Processing by CharactersController#new as HTML
+  Rendering characters/new.erb within layouts/application
+  Rendered characters/new.erb within layouts/application (22.3ms)
+Completed 200 OK in 517ms (Views: 481.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2018-03-05 16:23:32 -0500
+Processing by CharactersController#new as HTML
+  Rendering characters/new.erb within layouts/application
+  Rendered characters/new.erb within layouts/application (42.2ms)
+Completed 200 OK in 312ms (Views: 283.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:24:09 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"/app/images/alex.png"}, "commit"=>"Create Character"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "/app/images/alex.png"], ["created_at", "2018-03-05 21:24:10.047357"], ["updated_at", "2018-03-05 21:24:10.047357"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/1
+Completed 302 Found in 48ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/characters/1" for 127.0.0.1 at 2018-03-05 16:24:10 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (297.3ms)
+Completed 500 Internal Server Error in 345ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `character' for #<#<Class:0x007f9cf21009c8>:0x007f9cf46acd20>):
+    1: <%= @character.name %>
+    2: <img src="<%= @character.image_url %>" alt=" <%= character.name %> picture ">
+  
+app/views/characters/show.erb:2:in `_app_views_characters_show_erb__3708723778084014600_70156046136000'
+Started GET "/characters/1" for 127.0.0.1 at 2018-03-05 16:24:24 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.1ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/app/images/alex.png" for 127.0.0.1 at 2018-03-05 16:24:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/app/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:27:29 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"/assets/images/alex.png"}, "commit"=>"Create Character"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "/assets/images/alex.png"], ["created_at", "2018-03-05 21:27:29.417032"], ["updated_at", "2018-03-05 21:27:29.417032"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/2
+Completed 302 Found in 74ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/characters/2" for 127.0.0.1 at 2018-03-05 16:27:29 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (3.8ms)
+Completed 200 OK in 161ms (Views: 153.4ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:27:37 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"assets/images/alex.png"}, "commit"=>"Create Character"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "assets/images/alex.png"], ["created_at", "2018-03-05 21:27:37.775390"], ["updated_at", "2018-03-05 21:27:37.775390"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/3
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/characters/3" for 127.0.0.1 at 2018-03-05 16:27:37 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/characters/assets/images/alex.png" for 127.0.0.1 at 2018-03-05 16:27:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/characters/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:27:55 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"app/assets/images/alex.png"}, "commit"=>"Create Character"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "app/assets/images/alex.png"], ["created_at", "2018-03-05 21:27:55.476165"], ["updated_at", "2018-03-05 21:27:55.476165"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/4
+Completed 302 Found in 60ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/characters/4" for 127.0.0.1 at 2018-03-05 16:27:55 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (2.8ms)
+Completed 200 OK in 100ms (Views: 84.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/characters/app/assets/images/alex.png" for 127.0.0.1 at 2018-03-05 16:27:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/characters/app/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:31:21 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://imgur.com/a/amxoq"}, "commit"=>"Create Character"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://imgur.com/a/amxoq"], ["created_at", "2018-03-05 21:31:21.171289"], ["updated_at", "2018-03-05 21:31:21.171289"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/5
+Completed 302 Found in 55ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/characters/5" for 127.0.0.1 at 2018-03-05 16:31:21 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (4.2ms)
+Completed 200 OK in 213ms (Views: 194.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:35:04 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://i.imgur.com/hQtGK2K.png"}, "commit"=>"Create Character"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://i.imgur.com/hQtGK2K.png"], ["created_at", "2018-03-05 21:35:04.068561"], ["updated_at", "2018-03-05 21:35:04.068561"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/6
+Completed 302 Found in 45ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/characters/6" for 127.0.0.1 at 2018-03-05 16:35:04 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (3.1ms)
+Completed 200 OK in 93ms (Views: 85.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/@character.image_url" for 127.0.0.1 at 2018-03-05 16:35:04 -0500
+Processing by CharactersController#show as 
+  Parameters: {"id"=>"@character"}
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=@character):
+  
+app/controllers/characters_controller.rb:37:in `find_character'
+Started GET "/characters/6" for 127.0.0.1 at 2018-03-05 16:35:08 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/characters/@character.image_url" for 127.0.0.1 at 2018-03-05 16:35:08 -0500
+Processing by CharactersController#show as 
+  Parameters: {"id"=>"@character"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=@character):
+  
+app/controllers/characters_controller.rb:37:in `find_character'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:35:31 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://picsum.photos/200/300 https://picsum.photos/200/300"}, "commit"=>"Create Character"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://picsum.photos/200/300 https://picsum.photos/200/300"], ["created_at", "2018-03-05 21:35:31.668019"], ["updated_at", "2018-03-05 21:35:31.668019"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/7
+Completed 302 Found in 52ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/characters/7" for 127.0.0.1 at 2018-03-05 16:35:31 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (4.5ms)
+Completed 200 OK in 104ms (Views: 92.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/characters/@character.image_url" for 127.0.0.1 at 2018-03-05 16:35:31 -0500
+Processing by CharactersController#show as 
+  Parameters: {"id"=>"@character"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 53ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=@character):
+  
+app/controllers/characters_controller.rb:37:in `find_character'
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:36:50 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://picsum.photos/200/300"}, "commit"=>"Create Character"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://picsum.photos/200/300"], ["created_at", "2018-03-05 21:36:50.859334"], ["updated_at", "2018-03-05 21:36:50.859334"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/8
+Completed 302 Found in 51ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/characters/8" for 127.0.0.1 at 2018-03-05 16:36:50 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (8.2ms)
+Completed 200 OK in 130ms (Views: 121.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:37:09 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://imgur.com/hQtGK2K"}, "commit"=>"Create Character"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://imgur.com/hQtGK2K"], ["created_at", "2018-03-05 21:37:09.837284"], ["updated_at", "2018-03-05 21:37:09.837284"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/9
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/characters/9" for 127.0.0.1 at 2018-03-05 16:37:09 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.0ms)
+Completed 200 OK in 77ms (Views: 71.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:37:39 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://imgur.com/a/amxoq"}, "commit"=>"Create Character"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://imgur.com/a/amxoq"], ["created_at", "2018-03-05 21:37:39.872984"], ["updated_at", "2018-03-05 21:37:39.872984"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/10
+Completed 302 Found in 16ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/characters/10" for 127.0.0.1 at 2018-03-05 16:37:39 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.1ms)
+Completed 200 OK in 111ms (Views: 103.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2018-03-05 16:37:48 -0500
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KjCpv6EM+bJI+ayMfredFDYhY4KUvb0aE//p3GH5DwjbMvfKeEQb6G0y2kJ8fc2NzMA/0i48GCb9CgiTABfcw==", "character"=>{"name"=>"Alex", "height"=>"60", "weight"=>"150", "speed"=>"99", "strength"=>"25", "image_url"=>"https://i.imgur.com/hQtGK2K.png"}, "commit"=>"Create Character"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["height", 60], ["weight", 150], ["speed", 99], ["strength", 25], ["image_url", "https://i.imgur.com/hQtGK2K.png"], ["created_at", "2018-03-05 21:37:48.149993"], ["updated_at", "2018-03-05 21:37:48.149993"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/characters/11
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/characters/11" for 127.0.0.1 at 2018-03-05 16:37:48 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.5ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/characters/6" for 127.0.0.1 at 2018-03-05 16:40:17 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (1.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (5.8ms)
+Completed 200 OK in 141ms (Views: 102.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/characters/6" for 127.0.0.1 at 2018-03-05 16:41:07 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.0ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 0.3ms)
+
+
