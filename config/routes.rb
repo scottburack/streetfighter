@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
+  root 'welcome#welcome'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-  
-  resources :users
-  resources :characters
 
-  root to: 'welcome#welcome'
-=======
-  root to: 'welcome#welcome'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
   resources :users
   resources :characters
->>>>>>> refs/remotes/origin/master
+  resources :games, only: [:index, :new, :create, :show]
+
+  get  '/round1' => 'games#round1'
+
+
 end
