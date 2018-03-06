@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -8,4 +9,11 @@ Rails.application.routes.draw do
   resources :characters
 
   root to: 'welcome#welcome'
+=======
+  root to: 'welcome#welcome'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  resources :users
+  resources :characters
+>>>>>>> refs/remotes/origin/master
 end
