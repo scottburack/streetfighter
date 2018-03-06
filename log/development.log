@@ -4097,3 +4097,1994 @@ Completed 200 OK in 88ms (Views: 24.3ms | ActiveRecord: 0.3ms)
 
 
 >>>>>>> refs/remotes/origin/master
+Started GET "/" for 127.0.0.1 at 2018-03-06 09:56:51 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/isaac/Development/streetfighter/app/controllers/welcome_controller.rb:6: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/welcome_controller.rb:6: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-03-06 09:57:07 -0500
+Started GET "/" for 127.0.0.1 at 2018-03-06 09:57:17 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.9ms)
+Completed 200 OK in 734ms (Views: 732.0ms)
+
+
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 09:57:20 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (17.1ms)
+Completed 200 OK in 56ms (Views: 37.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-06 09:57:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPMNu01bOGd69QyNVtRiCb71V1Y2r+Sjq6dIyBGf8J/BZR5JT9HHFXZQz6ZiHsPcldbIyEm1R0vm5dc1h5fnog==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "isaac99"], ["password_digest", "$2a$10$OzfsELVxq5FM7Ze/5S.o..sF2h/JDxzUNWkC5bKTJYlGr8sgmRKW6"], ["created_at", "2018-03-06 14:57:33.550304"], ["updated_at", "2018-03-06 14:57:33.550304"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 69ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 09:57:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <%= @user.name %>
+  
+app/views/users/show.erb:1:in `_app_views_users_show_erb__1283624600221708979_70102397116620'
+Started GET "/login" for 127.0.0.1 at 2018-03-06 09:57:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 09:57:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SQ37swtWEbZ+aSkDJoWyZkep8u5TRGUPwgOnJVPOmJuAm+hBCdzuxHLM6igSTxOzbIptcCxexuePQTjYxcaPpg==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to 
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}):
+  
+app/controllers/sessions_controller.rb:12:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 09:58:28 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-06 09:58:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AxeHCtrcx0wy7jWz3ZfTQLOij7uRfT/eVP3SpgPgu0TKgZT42FY4Pj5L9pjpXXKVmIEQJe5nnDYZv01bleiseQ==", "user"=>{"name"=>"isaac88", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac88"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "isaac88"], ["password_digest", "$2a$10$cudp.NJyFGEj8WNlSPezB.a5o1XKcnkNn8smgmDtzjPcI4t09Qfnm"], ["created_at", "2018-03-06 14:58:33.542562"], ["updated_at", "2018-03-06 14:58:33.542562"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 67ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-03-06 09:58:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-03-06 09:58:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2018-03-06 09:58:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:16:50 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 28.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:16:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 22.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-06 10:16:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWGH+oX1ifzdIx+G8q0/WpoGzC1Qbk8CcZzN6Rnouwuk95QIh392jtGG3K3GZ56PsSVTsy907Oo83lIUj+CsNg==", "user"=>{"name"=>"iascc66", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "iascc66"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iascc66"], ["password_digest", "$2a$10$lDWU/nkiD1IoEI3ErOE6SOhEt26WRBzi3e9O/2qIRwDJjWmGbX9tm"], ["created_at", "2018-03-06 15:16:58.225961"], ["updated_at", "2018-03-06 15:16:58.225961"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 68ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2018-03-06 10:16:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:17:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:17:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PqtpJOr1EEWr9kV0v4HlXZuKNF/IXRWutlYJRxRHNTv3PXrW6H/vN6dThl+LS0SIsKmrwbdHtkb7FJa6gk8iBg==", "user"=>{"name"=>"iascc66", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "iascc66"], ["LIMIT", 1]]
+Redirected to 
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}):
+  
+app/controllers/sessions_controller.rb:12:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:17:27 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:17:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:18:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (2.0ms)
+Completed 200 OK in 225ms (Views: 215.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:18:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (15.8ms)
+Completed 200 OK in 54ms (Views: 38.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:18:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gn3V/UCeo8tWw1BW8gAljqwERiALb1nXKnUBNO5QdcjT68YPQhRcuVpmk33GyoRbhyfZvnR1+j9nN57JeFhi9Q==", "user"=>{"name"=>"isaac88", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac88"], ["LIMIT", 1]]
+Redirected to 
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}):
+  
+app/controllers/sessions_controller.rb:12:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:18:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gn3V/UCeo8tWw1BW8gAljqwERiALb1nXKnUBNO5QdcjT68YPQhRcuVpmk33GyoRbhyfZvnR1+j9nN57JeFhi9Q==", "user"=>{"name"=>"isaac99999", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99999"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:18:37 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:18:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:18:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DMcuQaPbB8PnPTddRInrtLUo4IeqxwCIBuHSXxzgMrrFUT2zoVH4seuY9HZwQ0phngt/GdXdo2BLo02iiuglhw==", "user"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:18:43 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:18:44 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:18:45 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vHQeNTtbCvjodRqTpZHUWKbWVTXlRmjvv2BfcXrnFEJ14g3HOdH1iuTQ2biRW3WNjfXKq5pcywfyIsCM7O8Dfw==", "user"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:18:45 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:18:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:21:12 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 27.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:21:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mj8Rcg7t+fACnNwglXA6aOZfmTYR4UrsRHWBch/jKmP7qQKADGcGgg45Hwuhupu9zXwGqG776QQJNx6Pies9Xg==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users.6
+Completed 302 Found in 65ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users.6" for 127.0.0.1 at 2018-03-06 10:21:16 -0500
+Processing by UsersController#index as 
+  Rendering users/index.erb within layouts/application
+  Rendered users/index.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:21:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 23.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:21:37 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:21:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt0Cj1qlQg5r08DvUNa+MflGHX87qeWZIk2MYL66UZafSxF9WC+9fGd2A8RkHB/k0mWC4USzRnFvDxOdKLJGqw==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 10:21:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:22:35 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 23.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:22:37 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 29.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:22:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmMKsUx+8QQMOheWUcsty5T2u9HKqvlJqpXkeNAIjsBn9RlDTvQOdgCf1L1lAYwev9UkT7WwWqHn13uFRgCZ/Q==", "user"=>{"name"=>"isaac99999", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99999"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:22:40 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:22:45 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:25:43 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:25:54 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (1.5ms)
+Completed 200 OK in 198ms (Views: 189.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:25:56 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (18.5ms)
+Completed 200 OK in 56ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:26:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eDYEt9rmKy/m6kKfYqg4Zk46D2c8vi5oI+97NodtoASxoBdF2GzUXepPgbRWYpmzZRmQ+UOkjYBureTLEWW3OQ==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 10:26:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login.html" for 127.0.0.1 at 2018-03-06 10:26:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login.xml" for 127.0.0.1 at 2018-03-06 10:26:13 -0500
+Processing by SessionsController#new as XML
+  Rendering sessions/new.erb
+  Rendered sessions/new.erb (1.4ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login.json" for 127.0.0.1 at 2018-03-06 10:26:18 -0500
+Processing by SessionsController#new as JSON
+  Rendering sessions/new.erb
+  Rendered sessions/new.erb (1.5ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login.xml" for 127.0.0.1 at 2018-03-06 10:26:22 -0500
+Processing by SessionsController#new as XML
+  Rendering sessions/new.erb
+  Rendered sessions/new.erb (1.4ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login.html" for 127.0.0.1 at 2018-03-06 10:26:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:26:53 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:26:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:30:40 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 34.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:30:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 21.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:30:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J19pZH0CNPT5KX61Q2ekXvTGqbBeRw7jqZ1Y5IDewujuyXqWf4jLhvWMvZ53rQWL3+U2LiFdrQvk38cZFtbV1Q==", "name"=>"isaac", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:31:10 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:35:54 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (1.4ms)
+Completed 200 OK in 211ms (Views: 201.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:35:57 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"+9jm0otzAhPJhCf0llDEmLdiXwfDuvz5DeOPNXde36syTvUgifn9YcUh5N+immVNnEHAmbygXxFAoRDI4VbIlg=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (9.9ms)
+Completed 200 OK in 48ms (Views: 33.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:36:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:36:45 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/isaac/Development/streetfighter/app/views/welcome/welcome.erb:3: syntax error, unexpected ',', expecting =>
+...", as: "button", new_user_path, method: 'get' );@output_buff...
+...                              ^):
+  
+app/views/welcome/welcome.erb:3: syntax error, unexpected ',', expecting =>
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:37:09 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:37:15 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"5wLDCMQ2ckAqYdet1FHGC5Jk92SD0h5E1F0vfpwxBOYulND6xryNMibEFIbgm2feuUdo+vzIvayZH7CDCjkT2w=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:37:18 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"authenticity_token"=>"5wLDCMQ2ckAqYdet1FHGC5Jk92SD0h5E1F0vfpwxBOYulND6xryNMibEFIbgm2feuUdo+vzIvayZH7CDCjkT2w=="}
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-06 10:37:26 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BEPiiWpLGIMF/+8Q1KsPkBO+3oO65qyIt2+aqtcDNDTN1fF7aMHn8QlaLDvgYa5FOJ1BHcX8D2D6LQVXQQsjCQ==", "user"=>{"name"=>"isaac0", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "isaac0"], ["password_digest", "$2a$10$69FbEvXKjPe4eSsGEX10Ve2bzCYumEoiYUGh.D13SkV27Alqm02EK"], ["created_at", "2018-03-06 15:37:26.943419"], ["updated_at", "2018-03-06 15:37:26.943419"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 70ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2018-03-06 10:37:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:37:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 10:37:30 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"5wLDCMQ2ckAqYdet1FHGC5Jk92SD0h5E1F0vfpwxBOYulND6xryNMibEFIbgm2feuUdo+vzIvayZH7CDCjkT2w=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 10:37:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C0rvg6mVbcwREc+Mlq38e9O9WZZYMedHHWpaTHnwpSbC3Pxxqx+Svh20DKeiZ12u+J7GCCcrRK9QKMWx7/iyGw==", "user"=>{"name"=>"isaac0", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac0"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2018-03-06 10:37:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 10:39:23 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+    5:   <%= f.collection_select :character_id, Character.all, :name %>
+  
+app/views/games/new.erb:2:in `_app_views_games_new_erb___1715846215263069490_70151721043640'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 10:39:51 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+    5:   <%= f.collection_select :character_id, Character.all, :name %>
+    6: 
+    7: <% end %>
+  
+app/views/games/new.erb:5:in `block in _app_views_games_new_erb___1715846215263069490_70151721029620'
+app/views/games/new.erb:2:in `_app_views_games_new_erb___1715846215263069490_70151721029620'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 10:40:07 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `character_id' for #<Game:0x00007f9aeccd9400>):
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+    5:   <%= f.collection_select :character_id, Character.all, :id, :name %>
+    6: 
+    7: <% end %>
+  
+app/views/games/new.erb:5:in `block in _app_views_games_new_erb___1715846215263069490_70151687260300'
+app/views/games/new.erb:2:in `_app_views_games_new_erb___1715846215263069490_70151687260300'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 10:43:13 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :name:Symbol):
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+    5:   <%= f.collection_select :character, :character_id, Character.all, :id, :name %>
+    6: 
+    7: <% end %>
+  
+app/views/games/new.erb:5:in `block in _app_views_games_new_erb___1715846215263069490_70151690721080'
+app/views/games/new.erb:2:in `_app_views_games_new_erb___1715846215263069490_70151690721080'
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:46:26 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 10:47:00 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 10:47:37 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCharacterIdToGameTable (20180306155545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "games" ADD "player_character_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "games" ADD "enemy_character_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180306155545"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "X"], ["height", 99], ["weight", 900], ["speed", 9], ["strength", 15], ["created_at", "2018-03-06 16:04:07.303978"], ["updated_at", "2018-03-06 16:04:07.303978"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Y"], ["height", 42], ["weight", 420], ["speed", 1], ["strength", 3], ["created_at", "2018-03-06 16:04:07.307918"], ["updated_at", "2018-03-06 16:04:07.307918"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "height", "weight", "speed", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Z"], ["height", 50], ["weight", 150], ["speed", 15], ["strength", 2], ["created_at", "2018-03-06 16:04:07.310486"], ["updated_at", "2018-03-06 16:04:07.310486"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:04:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :name:Symbol):
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+    5:   <%= f.collection_select :character, :player_character_id, Character.all, :id, :name %>
+    6: 
+    7: <% end %>
+  
+app/views/games/new.erb:5:in `block in _app_views_games_new_erb___1715846215263069490_70151692888140'
+app/views/games/new.erb:2:in `_app_views_games_new_erb___1715846215263069490_70151692888140'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:05:35 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (9.4ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:06:17 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/characters/1" for 127.0.0.1 at 2018-03-06 11:06:28 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/app/images/alex.png" for 127.0.0.1 at 2018-03-06 11:06:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/app/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/characters/2" for 127.0.0.1 at 2018-03-06 11:06:31 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/characters/3" for 127.0.0.1 at 2018-03-06 11:06:34 -0500
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering characters/show.erb within layouts/application
+  Rendered characters/show.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/characters/assets/images/alex.png" for 127.0.0.1 at 2018-03-06 11:06:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/characters/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.5) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.5) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/app/images/alex.png" for 127.0.0.1 at 2018-03-06 11:06:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/app/images/alex.png"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:07:07 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:07:18 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:07:34 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:07:49 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:07:51 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Trvt2RXlIr59f1Efz7s9t9t+wbQ+BJsS89ltat0r18srPxFZt1r+PVQPm9L9E0j9E5kmK/isYQGjfpIPXy4Yg==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"1"}, "commit"=>"Begin Fight!"}
+No template found for GamesController#create, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:10:19 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 26.8ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:10:23 -0500
+  
+SyntaxError (/Users/isaac/Development/streetfighter/app/controllers/games_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/games_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:10:29 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (19.3ms)
+Completed 200 OK in 52ms (Views: 40.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:10:32 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hf+Ll2meMuV5IduhBaekw7tT25bfrKZUwxjevbqXE7XUaZhlaxTNl3WEGIoxbQUWkHBECKC2BbyOWkFALJ8EiA==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"4"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for GamesController#create, rendering head :no_content
+Completed 204 No Content in 87ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:13:39 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (1.4ms)
+Completed 200 OK in 208ms (Views: 199.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:13:42 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (42.8ms)
+Completed 200 OK in 92ms (Views: 64.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:13:46 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z6pPnoqdXEsAdYVWnZoxGzO8/Q3k2iTy4OIhBvL+aeYGPFxsiBejOQzQRn2pUJDOGJ9ik5vAhxqtoL77ZPZ+2w==", "game"=>{"player_character_id"=>"12", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:13:46 -0500
+Processing by GamesController#round1 as HTML
+  Rendering games/round1.erb within layouts/application
+  Rendered games/round1.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `player_character_id' for nil:NilClass):
+    1: <%= @game.player_character_id.name %>
+    2: <%= @game.enemy_character_id.name %>
+  
+app/views/games/round1.erb:1:in `_app_views_games_round__erb__2125266539130524199_70250076105000'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:14:13 -0500
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:14:23 -0500
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:14:23 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (0.7ms)
+Completed 200 OK in 62ms (Views: 59.4ms)
+
+
+Processing by GamesController#new as HTML
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 24.6ms)
+
+
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (30.5ms)
+Completed 200 OK in 184ms (Views: 118.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:14:26 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (3.9ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:14:30 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s2lwWPUk4ofJIHIGcMNXOrwUlfcndcZKAFIj5hNss356/2Oq964d9cWFsS1ECfbvlzcKaVhvZaJNELwbhWSkQw==", "game"=>{"player_character_id"=>"13", "enemy_character_id"=>"1"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:14:30 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:16:in `round1'
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:14:55 -0500
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:14:55 -0500
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:14:59 -0500
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:15:01 -0500
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:15:01 -0500
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:15:03 -0500
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:15:04 -0500
+Started PUT "/__web_console/repl_sessions/a9032b58f5abec16405a8c0b742c9574" for 127.0.0.1 at 2018-03-06 11:15:04 -0500
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:15:49 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (14.3ms)
+Completed 200 OK in 52ms (Views: 40.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:15:51 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IzTR4cmVywHtiBa7tI+Qkq9sUg7tzJaT4yvLTQMI4m3qosITyx80c+Et1ZCARTFHhE/NkJLWNXuuaVSwlQD1UA==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"6"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:15:51 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 107992ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+Started GET "/games/" for 127.0.0.1 at 2018-03-06 11:17:39 -0500
+app/controllers/games_controller.rb:17:in `round1'
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (1.5ms)
+Completed 200 OK in 83ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:17:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome, user: <%= @game.user.name %></h1>
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+  
+app/views/games/new.erb:1:in `_app_views_games_new_erb___955201082232699461_70234166360480'
+Started GET "/games/" for 127.0.0.1 at 2018-03-06 11:17:58 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (0.5ms)
+Completed 200 OK in 229ms (Views: 225.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:18:00 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome, user: <%= @game.user.name %></h1>
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+  
+app/views/games/new.erb:1:in `_app_views_games_new_erb___955201082232699461_70234182973060'
+Started GET "/games/" for 127.0.0.1 at 2018-03-06 11:18:58 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 21.8ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:19:00 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome, user: <%= @game.user.name %></h1>
+    2: <%= form_for @game do |f| %>
+    3: 
+    4:   <%= f.label "Choose your fighter: "%>
+  
+app/views/games/new.erb:1:in `_app_views_games_new_erb___955201082232699461_70234204799840'
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:19:14 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (24.2ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:19:17 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9MvsC+xJ0B+wBBKwGIVFh5GnvJEGnF7RxF5tY4bgwn09Xf/57sMvbbyh0ZssT+RSuoQjD3mG/TmJHPKeEOjVQA==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"4"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 99970ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:20:57 -0500
+Started GET "/games/" for 127.0.0.1 at 2018-03-06 11:20:57 -0500
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:20:57 -0500
+Processing by GamesController#index as HTML
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:13:in `create'
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (7.8ms)
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (2.7ms)
+Completed 200 OK in 1908ms (Views: 1898.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2643ms (Views: 2628.9ms | ActiveRecord: 0.0ms)
+
+
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (6.1ms)
+Completed 200 OK in 549ms (Views: 533.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:21:02 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (6.8ms)
+Completed 200 OK in 551ms (Views: 535.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:21:05 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (8.6ms)
+Completed 200 OK in 544ms (Views: 533.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:21:07 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (1.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (351.3ms)
+Completed 200 OK in 1036ms (Views: 853.1ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:21:11 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i+3IfMPYKKoF1LIgdJlx4VcPHNoSQlCbTOFdx9UHq9ZCe9uOwVLX2AlxcQtAU9A0fCyDRG1Y83MBo8I6Qw+86w==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (1.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (2.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 228ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/games_controller.rb:11:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:21:51 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i+3IfMPYKKoF1LIgdJlx4VcPHNoSQlCbTOFdx9UHq9ZCe9uOwVLX2AlxcQtAU9A0fCyDRG1Y83MBo8I6Qw+86w==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (1.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 140508ms (ActiveRecord: 34.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:24:19 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i+3IfMPYKKoF1LIgdJlx4VcPHNoSQlCbTOFdx9UHq9ZCe9uOwVLX2AlxcQtAU9A0fCyDRG1Y83MBo8I6Qw+86w==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (2.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 614ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:24:21 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 30ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:18:in `round1'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:24:27 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (5.0ms)
+Completed 200 OK in 524ms (Views: 507.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:24:36 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (4.5ms)
+Completed 200 OK in 582ms (Views: 562.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:24:37 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (2.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (137.5ms)
+Completed 200 OK in 733ms (Views: 714.0ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:24:43 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6NQfEoQJ/ZEgtWLOKDd4t0TqujMNfcRNkmvUg+jFi9shQgzghoMC4ywQoeUc/dlib8klrXJnZ6XfKUt+fs2c5g==", "game"=>{"player_character_id"=>"12", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (1.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 104ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:24:43 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:18:in `round1'
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:24:55 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (4.5ms)
+Completed 200 OK in 589ms (Views: 571.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:24:58 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"RqXXQ77sYvfUEuMWXH3YgT2V93xXjlViOqnKti3qX86PM8SxvGadhdi3ID1ot3lUFrZo4iiU9op361VLu+JI8w=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (47.6ms)
+Completed 200 OK in 711ms (Views: 549.8ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 11:25:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZMONb5bPI0j0gqz/4VgNfrcbxSoQ57nJz1AqjJQbjoitVZ6dlEXcOvgnb9TVkqyrnDhatG/9GiGCErVxAhOZtQ==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 99ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 11:25:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (6.2ms)
+Completed 200 OK in 544ms (Views: 511.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:25:10 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (1.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (138.5ms)
+Completed 200 OK in 657ms (Views: 631.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:25:17 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+qYA2BzFMWZe/YVSZL3EcE5Lt+h0Fq/P3TtCprtuPWIzMBMqHk/OFFJYRnlQd2WlZWgodgsMDCeQed1bLWYqXw==", "game"=>{"player_character_id"=>"14", "enemy_character_id"=>"13"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 96ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:25:17 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:18:in `round1'
+Started PUT "/__web_console/repl_sessions/459a927aa4742c2e62a246c3b879ee13" for 127.0.0.1 at 2018-03-06 11:25:22 -0500
+Started PUT "/__web_console/repl_sessions/459a927aa4742c2e62a246c3b879ee13" for 127.0.0.1 at 2018-03-06 11:25:22 -0500
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:26:42 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 703ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     9:   </head>
+    10: 
+    11:   <body>
+    12:     <p>Logged in as: <%= @user.name %></p>
+    13:     <%= yield %>
+    14:   </body>
+    15: </html>
+  
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4300107564319630795_70234204602740'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:27:10 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 605ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={:id=>6}):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4300107564319630795_70234167047020'
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 11:27:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (2.2ms)
+Completed 200 OK in 569ms (Views: 542.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:27:33 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 543ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={:id=>6}):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4300107564319630795_70234159435500'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:28:46 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 594ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={:id=>6}):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4300107564319630795_70234203575320'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:31:50 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (5.2ms)
+Completed 200 OK in 576ms (Views: 560.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:31:56 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (1.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (199.3ms)
+Completed 200 OK in 814ms (Views: 791.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:32:01 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bEB/tQHIcjcwtprBUIBF3P8evWMPhKAvZZykwk4aSAql1mxHA0KNRTwTWepkSuQJ1D0i/XCeA8co3js/2BJfNw==", "game"=>{"player_character_id"=>"14", "enemy_character_id"=>"12"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Load (1.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 98ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:32:01 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:18:in `round1'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:32:36 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (9.5ms)
+Completed 200 OK in 582ms (Views: 563.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:32:38 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+Completed 406 Not Acceptable in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SessionsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:32:45 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+Completed 406 Not Acceptable in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SessionsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:33:09 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+Completed 406 Not Acceptable in 76ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SessionsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 11:33:42 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (46.7ms)
+Completed 200 OK in 638ms (Views: 617.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:33:45 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+Completed 406 Not Acceptable in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SessionsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login.html" for 127.0.0.1 at 2018-03-06 11:33:59 -0500
+Processing by SessionsController#new as HTML
+Completed 406 Not Acceptable in 70ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SessionsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login.xml" for 127.0.0.1 at 2018-03-06 11:34:03 -0500
+Processing by SessionsController#new as XML
+No template found for SessionsController#new, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login.json" for 127.0.0.1 at 2018-03-06 11:34:06 -0500
+Processing by SessionsController#new as JSON
+No template found for SessionsController#new, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:34:33 -0500
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2QE5HrCekz4siEzppHzN4hw1BpPPSFhXol/4aMasVH4QlyrsshRsTCAtj8KQtmw3NxaZDbBS+7/vHWeVUKRDQw=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (36.2ms)
+Completed 200 OK in 620ms (Views: 598.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 11:34:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QixAkvM8GWJ6QAjGhjub44XTE7f6WJ1Tr5j/HAIjFziLulNg8bbmEHbly+2y8To2rvCMKYVCPrvi2mDhlCsABQ==", "user"=>{"name"=>"isaac99", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "isaac99"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 96ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-03-06 11:34:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (2.1ms)
+Completed 200 OK in 583ms (Views: 557.3ms | ActiveRecord: 1.1ms)
+
+

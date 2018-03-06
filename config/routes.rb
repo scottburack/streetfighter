@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+
+  root to: 'welcome#welcome'
 
   resources :users
   resources :characters
+  resources :games, only: [:index, :new, :create, :show]
 
-  root to: 'welcome#welcome'
+  get  '/round1' => 'games#round1'
+
 
 end
