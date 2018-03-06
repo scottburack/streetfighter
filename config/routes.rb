@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   root 'welcome#welcome'
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :characters
-  resources :games, only: [:index, :new, :create, :show]
 
   get  '/round1/:id' => 'games#round1'
 
