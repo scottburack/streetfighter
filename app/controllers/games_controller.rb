@@ -12,11 +12,23 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user_id = session[:user_id]
     @game.save
+
     redirect_to "/round1/#{@game.id}"
   end
 
   def round1
     @game = Game.find(params[:id])
+    @battle = Battle.new
+  end
+
+  def create_round
+    @battle = Battle.create(
+      attack: params[:attack],
+      player_character_id: params[:player_character_id],
+      enemy_character_id: params[:enemy_character_id]
+    )
+    redirect_to @battle
+
   end
 
 

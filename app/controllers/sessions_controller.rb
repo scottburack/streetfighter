@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = @user.try(:authenticate, params[:user][:password])
     if @user
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to new_game_path
     else
       redirect_to root_path
     end

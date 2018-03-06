@@ -1,2 +1,12 @@
-<%= @game.player_character.name %>
-<%= @game.enemy_character.name %>
+<ul>
+  <li><%= @game.player_character.name %></li>
+  <li><%= @game.player_character.health %></li>
+  <li><%= @game.enemy_character.name %></li>
+  <li><%= @game.enemy_character.health %></li>
+</ul>
+
+<%= form_tag @battle do |f| %>
+  <%= label_tag "Select Attack" %><br>
+  <%= select_tag "attack", options_for_select(Game::FIGHT_MOVES) %><br>
+  <%= submit_tag "Fight!" %>
+<% end %>

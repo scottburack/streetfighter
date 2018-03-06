@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
   before_action :find_character, only: [:show, :edit, :destroy]
-  
+
   def index
     @characters = Character.all
   end
@@ -38,6 +38,6 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :height, :weight, :speed, :strength, :image_url)
+    params.require(:character).permit(:name, :height, :weight, :speed, :strength, :health, :image_url)
   end
 end

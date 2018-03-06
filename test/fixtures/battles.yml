@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_character_id: 1
+  enemy_character_id: 1
+  attack: MyString
+
+two:
+  player_character_id: 1
+  enemy_character_id: 1
+  attack: MyString

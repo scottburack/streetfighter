@@ -7,6 +7,6 @@
   <%= f.label "Choose your opponent: "%>
   <%= f.collection_select :enemy_character_id, Character.all, :id, :name %><br>
 
-  <%= f.submit "Begin Fight!" %>
+  <%= f.submit "Fight!" %>
 
 <% end %>
