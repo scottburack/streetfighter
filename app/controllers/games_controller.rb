@@ -21,16 +21,6 @@ class GamesController < ApplicationController
     @battle = Battle.new
   end
 
-  def create_round
-    @battle = Battle.create(
-      attack: params[:attack],
-      player_character_id: params[:player_character_id],
-      enemy_character_id: params[:enemy_character_id]
-    )
-    redirect_to @battle
-
-  end
-
 
   private
 
