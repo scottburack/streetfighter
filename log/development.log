@@ -6088,3 +6088,298 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 583ms (Views: 557.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:44:59 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (151.9ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for #<#<Class:0x007fa6fe850258>:0x007fa6fe848008>):
+    2: 
+    3: <%= link_to "Sign Up", new_user_path, method: 'get' %>
+    4: 
+    5: <%= link_to "Log In", login_path, method: 'get' %>
+  
+app/views/welcome/welcome.erb:5:in `_app_views_welcome_welcome_erb__20287782379148354_70177605717560'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:46:03 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (2.2ms)
+Completed 200 OK in 540ms (Views: 534.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-03-06 11:46:26 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Parameters: {"authenticity_token"=>"5s9XWectFT0u5SrizuSFy+x+swqwEax3Z61Jt6p5rlcdC14gMEg2tEZyBzn276yJi5U2e/L7quOUFp4yl/4VGA=="}
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (25.6ms)
+Completed 200 OK in 391ms (Views: 357.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-06 11:46:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5MqHxYsMZaJ/cViCWURokbIWgo93zIOplPIZtLH3aKEfDo68XGlGKxfmdVlhT0HT1f0H/jUmhT1nSc4xjHDT7g==", "user"=>{"name"=>"scott2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "scott2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "scott2"], ["password_digest", "$2a$10$s7nUmatuRkVXCYUhsXJX2Oi.1GDKdqSXxNJMRsFy.qyBrsrikPLhi"], ["created_at", "2018-03-06 16:46:39.101274"], ["updated_at", "2018-03-06 16:46:39.101274"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 112ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2018-03-06 11:46:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.7ms)
+Completed 200 OK in 60ms (Views: 46.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:46:48 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 105ms (Views: 100.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:46:50 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (48.4ms)
+Completed 200 OK in 124ms (Views: 89.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:46:56 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dU+4ENJ3RcptoCBq/Zmr8XeQqUdpEHvKnO6FLpovnhqOi7FpBRJmQwU3DbHFkoKzEHssNiv6fV5vVVKrp6glVQ==", "game"=>{"player_character_id"=>"10", "enemy_character_id"=>"12"}, "commit"=>"Begin Fight!"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 114583ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:12:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:50:11 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dU+4ENJ3RcptoCBq/Zmr8XeQqUdpEHvKnO6FLpovnhqOi7FpBRJmQwU3DbHFkoKzEHssNiv6fV5vVVKrp6glVQ==", "game"=>{"player_character_id"=>"10", "enemy_character_id"=>"12"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "player_character_id", "enemy_character_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["created_at", "2018-03-06 16:50:12.256163"], ["updated_at", "2018-03-06 16:50:12.256163"], ["player_character_id", 10], ["enemy_character_id", 12]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 95ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:50:12 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:19:in `round1'
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:50:17 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (1.8ms)
+Completed 200 OK in 465ms (Views: 459.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 11:50:24 -0500
+Processing by WelcomeController#welcome as HTML
+  Rendering welcome/welcome.erb within layouts/application
+  Rendered welcome/welcome.erb within layouts/application (10.9ms)
+Completed 200 OK in 241ms (Views: 206.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:50:27 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (2.9ms)
+Completed 200 OK in 141ms (Views: 136.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:50:30 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (49.0ms)
+Completed 200 OK in 157ms (Views: 148.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:50:33 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6WwfApbsKHd1uyPwxkfZFkX2vA+iWnGkphmFntJmnvUSqBZ7QYkL/h0sDiv+TPBUIh05fuCwdzBVolIb7+Elug==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"1"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "player_character_id", "enemy_character_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["created_at", "2018-03-06 16:50:33.169546"], ["updated_at", "2018-03-06 16:50:33.169546"], ["player_character_id", 1], ["enemy_character_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 17ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:50:33 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:19:in `round1'
+Started PUT "/__web_console/repl_sessions/4357d7258460e4a4ea2de53f192e67ce" for 127.0.0.1 at 2018-03-06 11:50:38 -0500
+Started PUT "/__web_console/repl_sessions/4357d7258460e4a4ea2de53f192e67ce" for 127.0.0.1 at 2018-03-06 11:50:38 -0500
+Started PUT "/__web_console/repl_sessions/4357d7258460e4a4ea2de53f192e67ce" for 127.0.0.1 at 2018-03-06 11:50:40 -0500
+Started PUT "/__web_console/repl_sessions/4357d7258460e4a4ea2de53f192e67ce" for 127.0.0.1 at 2018-03-06 11:50:47 -0500
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:52:33 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 98ms (Views: 88.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:52:38 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (33.5ms)
+Completed 200 OK in 152ms (Views: 108.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:52:43 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qve8omVTuQfQMl4mpUxfyVxEqDRETYuNzc0nyYDu5sy5M7Xbsjaajrilc/2dR3aLO68tRQanjRk+dvBMvWldgw==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"1"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "player_character_id", "enemy_character_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["created_at", "2018-03-06 16:52:43.835010"], ["updated_at", "2018-03-06 16:52:43.835010"], ["player_character_id", 1], ["enemy_character_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 49ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:52:43 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:20:in `round1'
+Started PUT "/__web_console/repl_sessions/4594d6ac99f0c6b383133ae8fcdc56d2" for 127.0.0.1 at 2018-03-06 11:52:50 -0500
+Started PUT "/__web_console/repl_sessions/4594d6ac99f0c6b383133ae8fcdc56d2" for 127.0.0.1 at 2018-03-06 11:52:50 -0500
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:53:40 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:19:in `round1'
+Started GET "/login" for 127.0.0.1 at 2018-03-06 11:53:58 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"4qpw/U+jSJTRsqPd2vd8SkXBc7+Tur80lbYmvjLd+NYZbnmEmMZrHbkljgbi/FUIIir2ztFQuaBmDfE7D1pDmQ=="}
+  Rendering sessions/new.erb within layouts/application
+  Rendered sessions/new.erb within layouts/application (24.9ms)
+Completed 200 OK in 429ms (Views: 391.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-03-06 11:54:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aLETrrln9kZCWPs+C+I4L6jNsVrdT8reo+dX/fFoNwiTdRrXbgLVzyrP1uUz6RFtzyY0K5+lzEpQXIB4zO+MRw==", "user"=>{"name"=>"scott2", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "scott2"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 102ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2018-03-06 11:54:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-03-06 11:54:10 -0500
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  Rendered games/index.erb within layouts/application (0.7ms)
+Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-03-06 11:54:12 -0500
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  Rendered games/new.erb within layouts/application (43.1ms)
+Completed 200 OK in 152ms (Views: 101.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-03-06 11:54:14 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qMEAX1uFMLESvA1eOA4/fSqHAD5MuDeEn1Kt87AS/1FTBQkmjOATOHorIIUABRY/TWyFTw5SMRBs6Xp2jZVEHg==", "game"=>{"player_character_id"=>"1", "enemy_character_id"=>"1"}, "commit"=>"Begin Fight!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "player_character_id", "enemy_character_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["created_at", "2018-03-06 16:54:14.739687"], ["updated_at", "2018-03-06 16:54:14.739687"], ["player_character_id", 1], ["enemy_character_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/round1
+Completed 302 Found in 38ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/round1" for 127.0.0.1 at 2018-03-06 11:54:14 -0500
+Processing by GamesController#round1 as HTML
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=):
+  
+app/controllers/games_controller.rb:19:in `round1'
+  [1m[36mGame Load (2.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "winner", "created_at", "updated_at", "player_character_id", "enemy_character_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["winner", "scott"], ["created_at", "2018-03-06 16:59:02.810911"], ["updated_at", "2018-03-06 16:59:02.810911"], ["player_character_id", 2], ["enemy_character_id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]

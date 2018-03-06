@@ -8,8 +8,8 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
-    @game.save
+    @game = Game.create(game_params)
+
     redirect_to "/round1"
 
   end
