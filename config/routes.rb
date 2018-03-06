@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :characters
   resources :games, only: [:index, :new, :create, :show]
 
-  get  '/round1' => 'games#round1'
+  get  '/round1/:id' => 'games#round1'
 
 
 end

@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
 
-  def index
+  def show
+    @game = Game.find(params[:id])
   end
 
   def new
@@ -9,9 +10,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    @game.user_id = session[:user_id]
     @game.save
-    redirect_to "/round1"
-
+    redirect_to "/round1/#{@game.id}"
   end
 
   def round1
