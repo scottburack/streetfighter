@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_player: 1
+  computer_player: 1
+  winner: MyString
+  loser: MyString
+
+two:
+  user_player: 1
+  computer_player: 1
+  winner: MyString
+  loser: MyString
