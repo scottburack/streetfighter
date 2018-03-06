@@ -1,3 +1,23 @@
-<%= @battle.player_character.name %>
-<%= @battle.enemy_character.name %>
-<%= @battle.attack %>
+<p>Player character: </p>
+<%= @battle.get_player_character.name %><br>
+<%= @battle.get_player_character.health %><br>
+<p>Enemy character: </p>
+<%= @battle.get_enemy_character.name %><br>
+<%= @battle.get_enemy_character.health %><br>
+
+<p>Player attack</p>
+<%= @battle.attack %><br>
+<%= @battle.player_move %><br>
+
+<p>Enemy attack power</p>
+<%= @battle.enemy_move %><br>
+
+<p>Battle Outcome</p>
+<%= @battle.fight %><br>
+
+<%= @battle.get_player_character.health %><br>
+<%= @battle.get_enemy_character.health %><br>
+
+
+
+<%= link_to "Next round", "/battles/#{@battle.id}"%>
