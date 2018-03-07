@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :require_logged_in
 
   def show
     @game = Game.find(params[:id])

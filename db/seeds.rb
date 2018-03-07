@@ -10,3 +10,5 @@
 Character.create(name: "X", height: 99, weight: 900, speed: 9, strength: 15, health: 100)
 Character.create(name: "Y", height: 42, weight: 420, speed: 1, strength: 3, health: 100)
 Character.create(name: "Z", height: 50, weight: 150, speed: 15, strength: 2, health: 100)
+
+Character.create(name: "Alex", height: 50, weight: 150, speed: 999, strength: 999, health: 100)

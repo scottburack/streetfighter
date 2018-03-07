@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306231722) do
+ActiveRecord::Schema.define(version: 20180307160046) do
 
   create_table "battles", force: :cascade do |t|
     t.string "attack"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20180306231722) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
   end
 
 end

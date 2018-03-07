@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-
+  before_action :require_logged_in
   before_action :find_character, only: [:show, :edit, :destroy]
 
   def index

@@ -49,15 +49,30 @@ class Battle < ApplicationRecord
     end
   end
 
+  def assign_winner
+    outcome = game.user.wins + 1
+    game.user.update(wins: outcome)
+  end
+
+  def assign_loser
+    outcome = game.user.losses + 1
+    game.user.update(losses: outcome)
+  end
+
   def determine_winner
 
     if get_player_character.health <= 0
+      assign_loser
       game.update(winner: get_enemy_character.name)
       game.update(loser: get_player_character.name)
+
     elsif get_enemy_character.health <= 0
+      assign_winner
       game.update(winner: get_player_character.name)
       game.update(loser: get_enemy_character.name)
+      # byebug
     end
+
   end
 
 end

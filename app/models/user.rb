@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def get_wins
+    Game.where(winner == self.name).count
+  end
+
 end
