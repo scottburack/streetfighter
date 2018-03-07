@@ -14,8 +14,12 @@ class GamesController < ApplicationController
     @game.user_id = session[:user_id]
     @game.get_player_character.update(health: 100)
     @game.get_enemy_character.update(health: 100)
-    @game.save
-    redirect_to "/round1/#{@game.id}"
+    if @game.valid?
+      @game.save
+      redirect_to "/round1/#{@game.id}"
+    else
+      render :new
+    end
   end
 
   def round1

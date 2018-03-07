@@ -15,6 +15,8 @@
           <li><%= link_to "Hello, #{current_user.name}!", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path, method: :destroy %></li>
           <li><%= link_to 'New Game', new_game_path, method: 'get'%></li>
+          <li><%= link_to 'High Scores', users_path, method: 'get'%></li>
+          <li><%= link_to 'View Characters', characters_path, method: 'get'%></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", login_path %></li>
