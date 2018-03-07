@@ -2,11 +2,11 @@ class Battle < ApplicationRecord
   belongs_to :game
 
   def get_player_character
-    @player_character = Character.find(self.player_character_id)
+    Character.find(self.player_character_id)
   end
 
   def get_enemy_character
-    @enemy_character = Character.find(self.enemy_character_id)
+    Character.find(self.enemy_character_id)
   end
 
   def player_move
@@ -15,7 +15,7 @@ class Battle < ApplicationRecord
     elsif self.attack == 'kick'
       get_player_character.strength + get_player_character.speed
     elsif self.attack == 'block'
-    10
+      10
     end
   end
 
@@ -40,8 +40,23 @@ class Battle < ApplicationRecord
     elsif player_move > enemy_move
       outcome = get_enemy_character.health - (player_move - enemy_move)
       get_enemy_character.update(health: outcome)
-    else
+    elsif
       "its a tie"
+    end
+    if determine_winner
+      game.winner
+      game.loser
+    end
+  end
+
+  def determine_winner
+
+    if get_player_character.health <= 0
+      game.winner.update(get_enemy_character.name)
+      game.loser.update(get_player_character.name)
+    elsif get_enemy_character.health <= 0
+      game.winner.update(get_player_character.name)
+      game.loser.update(get_enemy_character.name)
     end
   end
 

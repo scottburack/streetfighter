@@ -2,6 +2,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    byebug
   end
 
   def new
@@ -11,8 +12,9 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.user_id = session[:user_id]
+    @game.get_player_character.update(health: 100)
+    @game.get_enemy_character.update(health: 100)
     @game.save
-
     redirect_to "/round1/#{@game.id}"
   end
 

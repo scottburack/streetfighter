@@ -6,4 +6,12 @@ class Game < ApplicationRecord
 
   FIGHT_MOVES = ['punch', 'kick', 'block']
 
+  def get_player_character
+    Character.find(self.player_character_id)
+  end
+
+  def get_enemy_character
+    Character.find(self.enemy_character_id)
+  end
+
 end

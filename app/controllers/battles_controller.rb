@@ -18,8 +18,7 @@ class BattlesController < ApplicationController
   def show
     @battle = Battle.find(params[:id])
     @battle.get_enemy_move
-    @battle.get_player_character
-    @battle.get_enemy_character
+    @battle.fight
   end
 
   private

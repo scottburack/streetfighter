@@ -13,11 +13,12 @@
 <%= @battle.enemy_move %><br>
 
 <p>Battle Outcome</p>
-<%= @battle.fight %><br>
 
 <%= @battle.get_player_character.health %><br>
 <%= @battle.get_enemy_character.health %><br>
 
-
-
-<%= link_to "Next round", "/battles/#{@battle.id}"%>
+<% if @battle.determine_winner %>
+  <%= link_to "Game over!", "/games/#{@battle.game_id}"%>
+<% else %>
+  <%= link_to "Next round", "/round1/#{@battle.game_id}"%>
+<% end %>
