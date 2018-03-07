@@ -2,7 +2,6 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    byebug
   end
 
   def new
