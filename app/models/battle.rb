@@ -9,6 +9,10 @@ class Battle < ApplicationRecord
     Character.find(self.enemy_character_id)
   end
 
+  def get_user
+    User.find(self.game.user_id)
+  end
+
   def player_move
     if self.attack == 'punch'
       2 * get_player_character.strength
@@ -43,36 +47,28 @@ class Battle < ApplicationRecord
     elsif
       "its a tie"
     end
-    if determine_winner
-      game.winner
-      game.loser
-    end
   end
 
-  def assign_winner
-    outcome = game.user.wins + 1
-    game.user.update(wins: outcome)
+  def user_victory
+    outcome = get_user.wins.to_i + 1
+    game.user.update_attribute(:wins, outcome)
   end
 
-  def assign_loser
-    outcome = game.user.losses + 1
-    game.user.update(losses: outcome)
+  def user_defeat
+    outcome = get_user.losses.to_i + 1
+    game.user.update_attribute(:losses, outcome)
   end
 
   def determine_winner
-
     if get_player_character.health <= 0
-      assign_loser
+      user_defeat
       game.update(winner: get_enemy_character.name)
       game.update(loser: get_player_character.name)
-
     elsif get_enemy_character.health <= 0
-      assign_winner
+      user_victory
       game.update(winner: get_player_character.name)
       game.update(loser: get_enemy_character.name)
-      # byebug
     end
-
   end
 
 end

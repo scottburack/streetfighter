@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307160046) do
+ActiveRecord::Schema.define(version: 20180307175133) do
 
   create_table "battles", force: :cascade do |t|
     t.string "attack"
@@ -43,20 +43,13 @@ ActiveRecord::Schema.define(version: 20180307160046) do
     t.integer "enemy_character_id"
   end
 
-  create_table "user_characters", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "character_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "wins", default: 0
-    t.integer "losses", default: 0
+    t.integer "wins"
+    t.integer "losses"
   end
 
 end

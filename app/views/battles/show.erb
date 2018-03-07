@@ -1,3 +1,7 @@
+<%= @battle.get_user.wins  %>
+<%= @battle.get_user.losses  %>
+<%= @battle.get_user.name %>
+
 <p>Player character: </p>
 <%= @battle.get_player_character.name %><br>
 <%= @battle.get_player_character.health %><br>
@@ -16,6 +20,8 @@
 
 <%= @battle.get_player_character.health %><br>
 <%= @battle.get_enemy_character.health %><br>
+
+
 
 <% if @battle.determine_winner %>
   <%= link_to "Game over!", "/games/#{@battle.game_id}"%>
