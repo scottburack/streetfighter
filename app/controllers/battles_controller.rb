@@ -13,7 +13,7 @@ class BattlesController < ApplicationController
       game_id: params[:game][:id]
     )
     @battle.save
-    redirect_to "/battles/#{@battle.id}"
+    redirect_to "/battles/#{@battle.id}💥"
   end
 
   def show
