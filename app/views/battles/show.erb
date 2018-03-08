@@ -23,7 +23,6 @@ Health: <%= @battle.get_enemy_character.health %><br>
 <br>
 
 
-
 <% if @battle.determine_winner %>
   <%= link_to "Game over!", "/games/#{@battle.game_id}"%>
 <% else %>
