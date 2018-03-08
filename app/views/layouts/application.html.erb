@@ -11,10 +11,11 @@
   </head>
 
   <body>
+    <embed src="../public/GuileTheme.mp3" autostart="true" loop="true" hidden="true"><embed>
     <div id="navbar" class="flex-container">
       <ul>
         <% if current_user %>
-          <li><%= link_to "Hello, #{current_user.name}!", user_path(current_user) %></li>
+          <li><%= link_to "Hello #{current_user.name}!", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path, method: :destroy %></li>
           <li><%= link_to 'New Game', new_game_path, method: 'get'%></li>
           <li><%= link_to 'High Scores', users_path, method: 'get'%></li>
