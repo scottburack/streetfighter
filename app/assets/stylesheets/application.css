@@ -1,19 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
  body  {
    background-color: #ccccc2;
    font-family: 'Press Start 2P', sans-serif;
@@ -40,13 +24,13 @@
    background-color: #e8e8e3;
    border-radius: 5px;
    box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #6f7178;
-   margin-top:10px;
    padding:10px;
    list-style: none;
    text-decoration: none;
  }
 
  #navbar li:hover{
+   color: blue;
    box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #444549;
  }
 
@@ -120,7 +104,6 @@
   justify-content:space-between;
   height: 100vh;
   text-align: center;
-  margin-top: 50px;
   margin-left: 25px;
 }
 #flex-grid img {
@@ -131,37 +114,35 @@
 #start_fight {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100vw;
   text-align: center;
-
 }
 
 #fight_button {
-  font-size: 35px;
+  font-size: 20px;
   font-family: 'Press Start 2P', sans-serif;
-  width: 250px;
-  padding: 10px;
-  color: red;
-  box-shadow: 0px 10px 10px #888888;
+  padding: 10px 20px;
+  color: #424bb0;
+  box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #444549;
   border-radius: 10px;
+  background-color: #e8e8e3;
+  border: none;
   margin: 20px auto 0 auto;
-
 }
-
 #fight_button:hover {
   color: blue;
 }
-
 .char_sel {
   background-color: #cddd86;
   font-family: 'Press Start 2P', sans-serif;
-  color: white;
-  padding: 16px;
+  color: #545b38;
+  padding: 20px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
+
 .rd1_character {
   position:absolute;
   height: 100%;
@@ -173,7 +154,6 @@
 
 .rd1_character p{
   margin: 10px;
-
 }
 
 #player img{
@@ -192,7 +172,6 @@
   bottom: 0px;
 }
 
-
 #select_attack{
   text-align: center;
   width: 200px;
@@ -201,12 +180,7 @@
 
 #rd1_form {
   width: 100%;
-}
-
-
-#rd1_form #fight_button {
-  width: 250px;
-  margin-left: 250px;
+  text-align: center
 }
 
 #char_img {
@@ -255,4 +229,26 @@
 
 #battle_outcome a{
   color: #383e1f;
+}
+
+#winner_page{
+  text-align: center;
+}
+
+#winner_page img{
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+  width: 500px;
+}
+#title_page{
+  text-align: center;
+}
+
+#title_page img{
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  margin: auto;
+  width: 700px;
 }
