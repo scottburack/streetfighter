@@ -164,3 +164,18 @@ img {
   margin-top: 175px;
   margin-left: -50px;
 }
+
+.characters_page {
+  text-align: center;
+  text-decoration: none;
+}
+
+.characters_page a {
+  text-decoration: none;
+  padding-top: 15px;
+}
+/* 
+.characters_show_page {
+  text-align: center;
+  text-decoration: none;
+} */

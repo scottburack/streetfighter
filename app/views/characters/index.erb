@@ -1,5 +1,6 @@
-<ul>
+<ul class='characters_page'>
   <% @characters.each do |character| %>
-    <li><%= link_to character.name, character_path(character) %></li>
+    <%= link_to character.name, character_path(character) %>
+    <br><br><br>
   <% end %>
 </ul>
