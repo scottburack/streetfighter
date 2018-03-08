@@ -1,26 +1,20 @@
-
-<p>Battle Outcome:</p>
-<p><%=@battle.get_player_character.name%> used <%= @battle.attack %>.</p>
-
-<p><%=@battle.get_enemy_character.name%> used <%= @battle.enemy_move %>.</p>
-
-<br><br>
-
-<p>Player character: </p>
-
-<%= @battle.get_player_character.name %><br>
-Health: <%= @battle.get_player_character.health %><br>
-
-<br>
-
-<p>Enemy character: </p>
-
-<%= @battle.get_enemy_character.name %><br>
-Health: <%= @battle.get_enemy_character.health %><br>
+<div id = "battle_outcome" class = "game_window">
+  <h1>Battle Outcome:</h1>
+  <p><%=@battle.get_player_character.name%> used <%= @battle.attack %>.</p>
+  <p><%=@battle.get_enemy_character.name%> used <%= @battle.enemy_move %>.</p>
 
 
-<br>
-<br>
+  <h1>Player character: </h1>
+  <p><%= @battle.get_player_character.name %></p>
+  <p>Health: <%= @battle.get_player_character.health %></p>
+
+  <h1>Enemy character: </h1>
+
+  <p><%= @battle.get_enemy_character.name %><br></p>
+  <p>Health: <%= @battle.get_enemy_character.health %></p>
+
+
+
 
 
 <% if @battle.determine_winner %>

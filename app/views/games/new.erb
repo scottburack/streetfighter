@@ -1,23 +1,21 @@
-<% if @game.errors.any? %>
-<ul>
-  <% @game.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+
 
 <div id="start_fight">
   <%= form_for @game do |f| %>
-
     <%= f.label "Choose your fighter: "%>
     <%= f.collection_select :player_character_id, Character.all, :id, :name, {}, {:class=>'char_sel'} %>
-
     <%= f.label "Choose your opponent: "%>
     <%= f.collection_select :enemy_character_id, Character.all, :id, :name, {}, {:class=>'char_sel'} %><br>
-
-
-</div>
     <%= f.submit "Fight!", :id => "fight_button" %>
+    <% if @game.errors.any? %>
+    <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </ul>
+    <% end %>
+</div>
+
 
 
   <div id="flex-grid">

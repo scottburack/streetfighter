@@ -1,23 +1,22 @@
+<div class="game_window">
 
 
-<% if @user.errors.any? %>
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+  <div id='sign_up'>
+    <%= form_for @user, url: login_path, method: :post do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.submit 'Log In', :id => "log_in_button"%>
+    <% end %>
+  </div>
 
-<div id='sign-in'>
-  <h1>Log In</h1>
-  <%= form_for @user, url: login_path, method: :post do |f| %>
-
-    <%= f.label :name %> : <br>
-    <%= f.text_field :name %><br>
-    <%= f.label :password %> : <br>
-    <%= f.password_field :password %><br>
-    <%= f.submit 'Log In' %>
-
+  <% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
   <% end %>
 
 </div>

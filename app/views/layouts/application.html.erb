@@ -11,11 +11,11 @@
   </head>
 
   <body>
-    <% audio_tag("/sounds/Guile-Theme-SNES.wav", autoplay: true, controls: false) %>
+
     <div id="navbar" class="flex-container">
       <ul>
         <% if current_user %>
-          <li><%= link_to "Hello, #{current_user.name}!", user_path(current_user) %></li>
+          <li><%= link_to "Hello #{current_user.name}!", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path, method: :destroy %></li>
           <li><%= link_to 'New Game', new_game_path, method: 'get'%></li>
           <li><%= link_to 'High Scores', users_path, method: 'get'%></li>

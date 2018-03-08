@@ -1,6 +1,5 @@
-<ul class='characters_page'>
+<ul id='characters_page' class='game_window'>
   <% @characters.each do |character| %>
-    <%= link_to character.name, character_path(character) %>
-    <br><br><br>
+    <li><%= link_to character.name, character_path(character) %></li>
   <% end %>
 </ul>
