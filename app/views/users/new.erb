@@ -1,23 +1,24 @@
 
-
-<% if @user.errors.any? %>
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+<div class="game_window">
+  <% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
 
-<div id='sign-in'>
-  <h1>Sign Up!</h1>
-  <br>
-  <%= form_for @user, controller: 'users', action: 'create' do |f| %>
-    <%= f.label :name %> :<br>
-    <%= f.text_field :name %> <br>
-    <%= f.label :password %> :<br>
-    <%= f.password_field :password %> <br>
-    <%= f.label :password_confirmation %> :<br>
-    <%= f.password_field :password %> <br><br>
-    <%= f.submit "sign up" %>
-  <% end %>
+  <div id='sign-in'>
+    <h1>Sign Up!</h1>
+    <br>
+    <%= form_for @user, controller: 'users', action: 'create' do |f| %>
+      <%= f.label :name %> :<br>
+      <%= f.text_field :name %> <br>
+      <%= f.label :password %> :<br>
+      <%= f.password_field :password %> <br>
+      <%= f.label :password_confirmation %> :<br>
+      <%= f.password_field :password %> <br><br>
+      <%= f.submit "sign up" %>
+    <% end %>
+  </div>
 </div>
