@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.sort_by {|user| -user.wins}
+    @users = User.all.sort_by {|user| -user.wins.to_i}
   end
 
   private

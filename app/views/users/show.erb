@@ -1,3 +1,5 @@
-<%= @user.name %>
-Win Total: <%= @user.wins.to_i %>
-Loss Total: <%= @user.losses.to_i %>
+<div id="user_score">
+  <h3><%= @user.name %></h3>
+  <h3>Win Total: <%= @user.wins.to_i %></h3>
+  <h3>Loss Total: <%= @user.losses.to_i %></h3>
+</div>

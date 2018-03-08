@@ -6,10 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">  </head>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
 
   <body>
-    <div class="flex-container">
+    <div id="navbar" class="flex-container">
       <ul>
         <% if current_user %>
           <li><%= link_to "Hello, #{current_user.name}!", user_path(current_user) %></li>

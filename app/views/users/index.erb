@@ -1,14 +1,16 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Wins</th>
-    <th>Losses</th>
-  </tr>
-  <% @users.each do |user| %>
+<div id="high_scores">
+  <table>
     <tr>
-      <td><%= user.name %></td>
-      <td><%= user.wins.to_i %></td>
-      <td><%= user.losses.to_i %></td>
+      <th>Name</th>
+      <th>Wins</th>
+      <th>Losses</th>
     </tr>
-  <% end %>
-</table>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.wins.to_i %></td>
+        <td><%= user.losses.to_i %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
