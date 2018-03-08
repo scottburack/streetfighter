@@ -7,8 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Character.create(name: "X", height: 99, weight: 900, speed: 9, strength: 15, health: 100)
-Character.create(name: "Y", height: 42, weight: 420, speed: 1, strength: 3, health: 100)
-Character.create(name: "Z", height: 50, weight: 150, speed: 15, strength: 2, health: 100)
+Character.create(name: "Ryu", height: 69, weight: 187, speed: 13, strength: 13, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/4/46/Ryurender.png/revision/latest/scale-to-width-down/350?cb=20170728171704", health: 100)
+Character.create(name: "Chun-Li", height: 65, weight: 130, speed: 15, strength: 8, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/e/e3/Chunrender.png/revision/latest?cb=20170728163823", health: 100)
+Character.create(name: "Guile", height: 72, weight: 200, speed: 12, strength: 14, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/a/a2/Guilerender.png/revision/latest/scale-to-width-down/350?cb=20170728164132", health: 100)
+Character.create(name: "Alex", height: 62, weight: 150, speed: 15, strength: 15, image_url: "https://i.imgur.com/hQtGK2K.png", health: 100)
 
-Character.create(name: "Alex", height: 50, weight: 150, speed: 999, strength: 999, health: 100)
+Character.create(name: "Cammy", height: 63, weight: 134, speed: 14, strength: 8, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/1/19/Cammyrender.png/revision/latest/scale-to-width-down/350?cb=20170728163129", health: 100)
+Character.create(name: "M.Bison", height: 70, weight: 247, speed: 10, strength: 15, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/1/17/Bisonrender.png/revision/latest/scale-to-width-down/350?cb=20170728171523", health: 100)
+Character.create(name: "Sagat", height: 89, weight: 172, speed: 11, strength: 14, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/a/a0/Sf4charselectsagat.png/revision/latest/scale-to-width-down/1000?cb=20150322175455", health: 100)
+Character.create(name: "Blanka", height: 75, weight: 216, speed: 11,strength: 13, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/1/1b/A8E717C8-33AE-4B94-8E07-C04C49929635.png/revision/latest?cb=20180213121152", health: 100)
+
+Character.create(name: "Zangief", height: 84, weight: 400, speed: 9, strength: 15, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/8/88/Zangiefrender.png/revision/latest/scale-to-width-down/350?cb=20170728171808", health: 100)
+Character.create(name: "Dhalsim", height: 69, weight: 109, speed: 12, strength: 11, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/b/b1/Dhalsimrender.png/revision/latest/scale-to-width-down/350?cb=20170728164253", health: 100)
+Character.create(name: "Balrog", height: 77, weight: 298, speed: 13, strength: 12, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/7/77/Balrogrender.png/revision/latest/scale-to-width-down/350?cb=20170728162928", health: 100)
+Character.create(name: "Sakura", height: 62, weight: 115, speed: 15, strength: 10, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/6/64/DDDC76A4-34C2-4BFB-A40C-EA96962B9C9D.png/revision/latest?cb=20180113085206", health: 100)
+
+Character.create(name: "E. Honda", height: 73, weight: 302, speed: 7, strength: 15, image_url: "http://www.bluemaize.net/im/automotive/street-fighter-e-honda-6.jpg", health: 100)
+# Character.create(name: "Y", height: 42, weight: 420, speed: 1, strength: 3, health: 100)
+# Character.create(name: "Z", height: 50, weight: 150, speed: 15, strength: 2, health: 100)
+# Character.create(name: "Alex", height: 50, weight: 150, speed: 999, strength: 999, health: 100)

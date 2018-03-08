@@ -27,12 +27,12 @@
   }
 
 
-
-
  nav ul {
    display: inline;
  }
 
  body  {
    background-color: lightblue;
+   font-family: 'Press Start 2P', sans-serif;
+   font-size: 12px;
  }

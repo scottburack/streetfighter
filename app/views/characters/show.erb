@@ -1,12 +1,22 @@
-<h2>Name: </h2>
-<h3><%= @character.name %></h3><br>
-<h2>Height: </h2>
-<h3><%= @character.height %></h3><br>
-<h2>Weight: </h2>
-<h3><%= @character.weight %></h3><br>
-<h2>Speed: </h2>
-<h3><%= @character.speed %></h3><br>
-<h2>Strength: </h2>
-<h3><%= @character.strength %></h3><br>
-<br>
-<img src=" <%= @character.image_url %>" alt="">
+
+
+<img src="<%= @character.image_url %>" alt="">
+
+<div class="characters">
+
+  <h2 class="category">Name: </h2>
+  <h2><%= @character.name %></h3><br>
+
+  <h2 class="category">Height: </h2>
+  <h2><%= @character.height %></h3><br>
+
+  <h2 class="category">Weight: </h2>
+  <h2><%= @character.weight %></h3><br>
+
+  <h2 class="category">Speed: </h2>
+  <h2><%= @character.speed %></h3><br>
+
+  <h2 class="category">Strength: </h2>
+  <h2><%= @character.strength %></h3><br>
+  <br>
+</div>
