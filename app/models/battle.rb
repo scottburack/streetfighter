@@ -17,6 +17,10 @@ class Battle < ApplicationRecord
     @enemy_move = ['punch', 'kick', 'headbutt'].sample
   end
 
+  def enemy_move
+    @enemy_move
+  end
+
   def random_num
     25 + rand(50)
   end
@@ -30,9 +34,9 @@ class Battle < ApplicationRecord
       -get_enemy_character.speed - random_num
     elsif self.attack == 'headbutt' && @enemy_move == 'punch'
       get_player_character.weight / 5 + random_num
-    elsif self.attack == 'kick' && @enemy_move == 'block'
+    elsif self.attack == 'kick' && @enemy_move == 'headbutt'
       get_player_character.strength + random_num
-    elsif self.attack == 'punch' && @enemy_move == 'block'
+    elsif self.attack == 'punch' && @enemy_move == 'headbutt'
       get_enemy_character.weight / -5 - random_num
     end
   end

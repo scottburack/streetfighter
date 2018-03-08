@@ -16,7 +16,7 @@ class GamesController < ApplicationController
     @game.get_enemy_character.update(health: 100)
     if @game.valid?
       @game.save
-      redirect_to "/🥊/#{@game.id}"
+      redirect_to "/round1/#{@game.id}"
     else
       render :new
     end
