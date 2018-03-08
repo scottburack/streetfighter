@@ -21,4 +21,8 @@ class Game < ApplicationRecord
     end
   end
 
+  def get_winner
+    Character.find_by(name: self.winner)
+  end
+
 end

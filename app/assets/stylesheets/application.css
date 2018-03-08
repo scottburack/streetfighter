@@ -84,9 +84,11 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
-  padding: 15px 20px 0 20px;
+  /* padding: 15px 20px 0 20px; */
   height: 100vh;
   text-align: center;
+  margin-top: 50px;
+  margin-left: 25px;
 }
 #flex-grid img {
   flex: 1;
@@ -95,8 +97,70 @@ img {
 }
 #start_fight {
   display: flex;
-  justify-content:space-between;
-  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
   width: 100vw;
   background-color: white;
+}
+
+#fight_button {
+  font-size: 35px;
+  font-family: 'Press Start 2P', sans-serif;
+  margin: 20px 50%;
+  width: 250px;
+  padding: 10px;
+  color: red;
+  background-color: #726f78;
+  box-shadow: 0px 10px 10px #888888;
+  border-radius: 10px;
+
+}
+
+#fight_button:hover {
+  color: blue;
+}
+
+.char_sel {
+  background-color: #4CAF50;
+  font-family: 'Press Start 2P', sans-serif;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#round1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+  margin-bottom: 65px;
+  margin-left: -40px;
+}
+
+.rd1_imgs {
+  display: flex;
+  justify-content: center;
+  padding-left: 340px;
+}
+
+#player {
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  float: left;
+}
+
+#enemy {
+  width: 200px;
+  height: 200px;
+  margin-top: -25px;
+  margin-right: 100px;
+  padding-left: 400px;
+  float: right;
+}
+
+.rd1_imgs #fight_button {
+  margin-top: 175px;
+  margin-left: -50px;
 }

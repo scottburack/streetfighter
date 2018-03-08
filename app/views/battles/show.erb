@@ -1,21 +1,26 @@
-<%= @battle.get_user.wins  %>
-<%= @battle.get_user.losses  %>
-<%= @battle.get_user.name %>
+
+<p>Battle Outcome:</p>
+<p><%=@battle.get_player_character.name%> used <%= @battle.attack %>.</p>
+
+<p><%=@battle.get_enemy_character.name%> used <%= @battle.enemy_move %>.</p>
+
+<br><br>
 
 <p>Player character: </p>
+
 <%= @battle.get_player_character.name %><br>
-<%= @battle.get_player_character.health %><br>
+Health: <%= @battle.get_player_character.health %><br>
+
+<br>
+
 <p>Enemy character: </p>
+
 <%= @battle.get_enemy_character.name %><br>
-<%= @battle.get_enemy_character.health %><br>
+Health: <%= @battle.get_enemy_character.health %><br>
 
 
-<p>Battle Outcome</p>
-<p><%=@battle.get_player_character.name%> used <%= @battle.attack %>.</p>
-<%= @battle.get_player_character.health %><br>
-
-<p><%=@battle.get_enemy_character.name%> used <%= @battle.get_enemy_move %>.</p>
-<%= @battle.get_enemy_character.health %><br>
+<br>
+<br>
 
 
 

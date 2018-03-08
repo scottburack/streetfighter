@@ -1,14 +1,29 @@
-<ul>
-  <li><%= @game.player_character.name %></li>
-  <li><%= @game.player_character.health %></li>
-  <li><%= @game.enemy_character.name %></li>
-  <li><%= @game.enemy_character.health %></li>
-</ul>
+<div id='round1'>
+  <%= @game.player_character.name %>
+  Health: <%= @game.player_character.health %>
 
-<%= form_tag @battle %>
-  <input type="hidden" name="game[player_id]" value="<%= @game.player_character_id %>" />
-  <input type="hidden" name="game[enemy_id]" value="<%= @game.enemy_character_id %>" />
-  <input type="hidden" name="game[id]" value="<%= @game.id %>" />
-  <%= label_tag "Select Attack" %><br>
-  <%= select_tag "attack", options_for_select(Game::FIGHT_MOVES) %><br>
-  <%= submit_tag "Fight!" %>
+
+  <br>
+  <br>
+  <br>
+  <%= @game.enemy_character.name %>
+  Health: <%= @game.enemy_character.health %>
+
+  <br>
+  <br>
+  <br>
+</div>
+
+<img id='player' src="<%= @game.get_player_character.image_url %>" alt="">
+<img id='enemy' src="<%= @game.get_enemy_character.image_url %>" alt="">
+
+<div class="rd1_imgs">
+
+  <%= form_tag @battle %>
+    <input type="hidden" name="game[player_id]" value="<%= @game.player_character_id %>" />
+    <input type="hidden" name="game[enemy_id]" value="<%= @game.enemy_character_id %>" />
+    <input type="hidden" name="game[id]" value="<%= @game.id %>" />
+    <%= label_tag "Select Attack!" %><br><br><br><br>
+    <%= select_tag "attack", options_for_select(Game::FIGHT_MOVES), {:class => 'char_sel'} %><br>
+    <%= submit_tag "Fight!", :id => "fight_button" %>
+</div>
