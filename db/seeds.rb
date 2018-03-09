@@ -23,6 +23,6 @@ Character.create(name: "Balrog", height: 77, weight: 298, speed: 13, strength: 1
 Character.create(name: "Sakura", height: 62, weight: 115, speed: 15, strength: 10, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/6/64/DDDC76A4-34C2-4BFB-A40C-EA96962B9C9D.png/revision/latest?cb=20180113085206", health: 100)
 
 Character.create(name: "E. Honda", height: 73, weight: 302, speed: 7, strength: 15, image_url: "http://www.bluemaize.net/im/automotive/street-fighter-e-honda-6.jpg", health: 100)
-# Character.create(name: "Y", height: 42, weight: 420, speed: 1, strength: 3, health: 100)
-# Character.create(name: "Z", height: 50, weight: 150, speed: 15, strength: 2, health: 100)
-# Character.create(name: "Alex", height: 50, weight: 150, speed: 999, strength: 999, health: 100)
+Character.create(name: "Michelle ReBranch", height: 55, weight: 100, speed: 15, strength: 15, image_url: "https://preview.ibb.co/cJWxhn/michelle_branch.png", health: 100)
+Character.create(name: "Ken Masters", height: 70, weight: 190, speed: 13, strength: 13, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/b/b4/Kenrender.png/revision/latest/scale-to-width-down/350?cb=20170728171332", health: 100)
+Character.create(name: "Matt", height: 73, weight: 160, speed: 10, strength: 10, image_url: "https://preview.ibb.co/fECjv7/matt.png",  health: 100)

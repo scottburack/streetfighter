@@ -1,26 +1,3 @@
 // Place all the styles related to the Characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.characters {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.category {
-  margin-right: 15px;
-}
-
-h2 {
-  margin-right: 50px;
-}
-
-
-
-img {
-  display: flex;
-  justify-content: center;
-  padding-left: 300px;
-}
