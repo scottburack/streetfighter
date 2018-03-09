@@ -133,7 +133,32 @@
 #fight_button:hover {
   color: red;
 }
+#rd1_form #fight_button {
+  font-size: 20px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 10px 20px;
+  color: #545b38;
+  box-shadow: 0 0 5px #6f7178 inset;
+  border-radius: 10px;
+  background-color: #cddd86;
+  border: none;
+  margin: 20px auto 0 auto;
+}
+#rd1_form #fight_button:hover {
+  color: #383e1f;
+}
+
 .char_sel {
+  height: 25px;
+  background-color: #e8e8e3;
+  font-family: 'Press Start 2P', sans-serif;
+  color:#424bb0;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+#rd1_form .char_sel {
   background-color: #cddd86;
   font-family: 'Press Start 2P', sans-serif;
   color: #545b38;
@@ -206,8 +231,8 @@
 #characters_page a {color: #545b38; text-decoration: none;}
 #characters_page a:hover{color: #383e1f;}
 #characters_page li{
-  font-size: 18px;
-  padding: 10px 0;
+  font-size: 15px;
+  padding: 8px 0;
   list-style: none;
 }
 
@@ -227,7 +252,7 @@
   color: #545b38;
 }
 
-#battle_outcome a{
+#battle_outcome a:hover{
   color: #383e1f;
 }
 
