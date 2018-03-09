@@ -1,7 +1,11 @@
 
 
 <div class="game_window">
-  <img id='char_img' src="<%= @character.image_url %>" alt="">
+
+  <div class="char_show">
+    <img id='char_img' src="<%= @character.image_url %>" alt="">
+  </div>
+
 
   <ul id="character_info">
     <li class="category">Name: <%= @character.name %></li>

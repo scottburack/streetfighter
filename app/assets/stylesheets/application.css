@@ -214,6 +214,11 @@
   bottom: 0px;
   right: 0px;
 }
+
+.char_show #char_img {
+  width: 50%;
+}
+
 #character_info {
   padding-top: 15px;
 }
@@ -235,6 +240,8 @@
   padding: 8px 0;
   list-style: none;
 }
+
+
 
 #battle_outcome {
   background-image: url("https://media.giphy.com/media/3s91l3GBTYZXNd0iKo/giphy.gif");
