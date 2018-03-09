@@ -123,7 +123,7 @@
   font-size: 20px;
   font-family: 'Press Start 2P', sans-serif;
   padding: 10px 20px;
-  color: #424bb0;
+  color: #a92e2e;
   box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #444549;
   border-radius: 10px;
   background-color: #e8e8e3;
@@ -131,7 +131,7 @@
   margin: 20px auto 0 auto;
 }
 #fight_button:hover {
-  color: blue;
+  color: red;
 }
 .char_sel {
   background-color: #cddd86;
