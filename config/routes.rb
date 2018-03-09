@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :games
   resources :characters
   resources :battles
+  resources :conversations do
+    resources :messages
+  end
 
 
 
