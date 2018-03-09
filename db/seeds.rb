@@ -22,3 +22,8 @@ Character.create(name: "E. Honda", height: 73, weight: 302, speed: 7, strength: 
 Character.create(name: "Ken Masters", height: 70, weight: 190, speed: 13, strength: 13, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/b/b4/Kenrender.png/revision/latest/scale-to-width-down/350?cb=20170728171332", health: 100)
 Character.create(name: "Blanka", height: 75, weight: 216, speed: 11,strength: 13, image_url: "https://vignette.wikia.nocookie.net/streetfighter/images/1/1b/A8E717C8-33AE-4B94-8E07-C04C49929635.png/revision/latest?cb=20180213121152", health: 100)
 Character.create(name: "Alex", height: 62, weight: 150, speed: 15, strength: 15, image_url: "https://i.imgur.com/hQtGK2K.png", health: 100)
+
+
+User.create(name: "Bob", wins: 5, losses: 9)
+User.create(name: "Greg", wins: 1, losses: 3)
+User.create(name: "Elizabeth", wins: 12, losses: 2)

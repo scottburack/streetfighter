@@ -74,7 +74,7 @@
   background-color: white;
 }
 
- #user_score h3{
+ #user_score {
   font-size: 15px;
   padding-top: 25px;
   text-align: center;
@@ -276,4 +276,31 @@
   left: 20px;
   margin: auto;
   width: 700px;
+}
+
+#conversations {
+  font-size: 12px;
+  text-align: center;
+  line-height: 40px;
+  list-style: none;
+  text-decoration: none;
+}
+#conversations input{
+  font-size: 20px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 10px 20px;
+  color: #545b38;
+  box-shadow: 0 0 5px #6f7178 inset;
+  border-radius: 10px;
+  background-color: #cddd86;
+  border: none;
+  margin-top: 5px;
+}
+#message_content {
+  font-size: 200px;
+}
+#message_body{
+  width: 600px;
+  margin-top: 50px;
+  background-color: #cddd86;
 }
