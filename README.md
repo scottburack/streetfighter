@@ -1,24 +1,5 @@
-# README
+# Street Fighter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic imitation of the famous video game Street Fighter using Ruby on Rails, HTML, and custom CSS.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Users can sign up to create their player, choose a character to play with and choose and enemy to fight. Wins and losses are kept track of on the user profile page and the High Scores page. 

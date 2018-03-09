@@ -33,11 +33,11 @@ class Battle < ApplicationRecord
     elsif self.attack == 'headbutt' && @enemy_move == 'kick'
       -get_enemy_character.speed - random_num
     elsif self.attack == 'headbutt' && @enemy_move == 'punch'
-      get_player_character.weight / 5 + random_num
+      get_player_character.weight / 6 + random_num
     elsif self.attack == 'kick' && @enemy_move == 'headbutt'
       get_player_character.strength + random_num
     elsif self.attack == 'punch' && @enemy_move == 'headbutt'
-      get_enemy_character.weight / -5 - random_num
+      get_enemy_character.weight / -6 - random_num
     end
   end
 

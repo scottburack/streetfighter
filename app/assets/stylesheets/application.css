@@ -256,3 +256,7 @@
 #battle_outcome a{
   color: #383e1f;
 }
+
+#char_img {
+  width: 50%;
+}
