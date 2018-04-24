@@ -1,0 +1,31 @@
+<div class="game_window" id="conversations">
+  <% if @over_ten %>
+   <%= link_to "Show Previous", '?m=all' %>
+  <% end %>
+  <div class="ui segment">
+   <% @messages.each do |message| %>
+    <% if message.body %>
+     <% user = User.find(message.user_id) %>
+     <div class=”item”>
+      <div class=”content”>
+       <div class=”header”><strong><%= user.name %></strong> <%= message.message_time %></div>
+        <div class=”list”>
+         <div id=”message_content”>
+           <p><%= message.body %></p>
+        </div>
+      </div>
+     </div>
+   </div>
+   <% end %>
+  <% end %>
+  </div>
+  <div class=”field”>
+  <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+
+     <%= f.text_area :body, class: "form-control" %>
+     <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+     <%= f.submit "Send"%>
+
+  <% end %>
+  </div>
+</div>

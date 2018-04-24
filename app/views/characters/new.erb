@@ -1,0 +1,22 @@
+<%= form_for @character do |f| %>
+  <%= f.label :name %> :
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :height %> :
+  <%= f.number_field :height %>
+  <br>
+  <%= f.label :weight %> :
+  <%= f.number_field :weight %>
+  <br>
+  <%= f.label :speed %> :
+  <%= f.number_field :speed %>
+  <br>
+  <%= f.label :strength %> :
+  <%= f.number_field :strength %>
+  <br>
+  <%= f.label :image_url %> :
+  <%= f.text_field :image_url %>
+  <br>
+
+  <%= f.submit 'Create Character' %>
+<% end %>

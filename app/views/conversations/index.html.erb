@@ -1,0 +1,19 @@
+<div class="game_window" id="conversations">
+   <h3>Mailbox</h3>
+   <% @conversations.each do |conversation| %>
+   <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+    <% if conversation.sender_id == current_user.id %>
+      <% recipient = User.find(conversation.recipient_id) %>
+    <% else %>
+      <% recipient = User.find(conversation.sender_id) %>
+    <% end %>
+    <%= link_to recipient.name,   conversation_messages_path(conversation)%>
+   <% end %>
+  <% end %>
+  <h3>All Users</h3>
+
+  <% @users.each do |user| %>
+    <li><%= user.name %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' unless current_user.id == user.id%><li>
+  <% end %>
+
+</div>

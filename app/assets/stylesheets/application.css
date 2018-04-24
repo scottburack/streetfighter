@@ -1,15 +1,324 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+ body  {
+   background-color: #ccccc2;
+   font-family: 'Press Start 2P', sans-serif;
+   font-size: 12px;
+ }
+
+ img {
+   width: 300px;
+ }
+
+ #navbar {
+   height: 35px;
+   margin: auto;
+
+ }
+ #navbar ul {
+   color: #424bb0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+ }
+
+ #navbar li {
+   background-color: #e8e8e3;
+   border-radius: 5px;
+   box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #6f7178;
+   padding:10px;
+   list-style: none;
+   text-decoration: none;
+ }
+
+ #navbar li:hover{
+   color: blue;
+   box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #444549;
+ }
+
+ #navbar a{
+   color: inherit;
+   text-decoration: none;
+ }
+
+ .game_window {
+   position: relative;
+   background-color: #8f9e55;
+   color: #545b38;
+   width: 750px;
+   height: 500px;
+   margin: 30px auto;
+   border-radius: 15px;
+   border: 15px solid #e8e8e3;
+   box-shadow: 0 0 25px #576d00 inset, 0 0 15px #6f7178;
+ }
+
+ #sign_up{
+   width: 100%;
+ }
+
+#new_user {
+  text-align: center;
+  width: 200px;
+  margin: 70px auto;
+}
+
+#new_user input{
+  background-color: #cddd86;
+  margin: 10px;
+  padding: 10px;
+}
+#log_in_button {
+  color: #545b38;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+ #user_score {
+  font-size: 15px;
+  padding-top: 25px;
+  text-align: center;
+ }
+
+ #high_scores table{
+   margin: 25px auto;
+   width: 550px;
+ }
+
+ #high_scores th{
+   padding-top:7px;
+   font-size:18px;
+   height: 25px;
+ }
+
+ #high_scores table, th, td{
+   padding: 5px 0;
+   text-align: center;
+   border: 4px solid #757f4d;
+   border-collapse: collapse;
+ }
+
+#flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  height: 100vh;
+  text-align: center;
+  margin-left: 25px;
+}
+#flex-grid img {
+  flex: 1;
+  height: 200px;
+  margin: 10px 0;
+}
+#start_fight {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100vw;
+  text-align: center;
+}
+
+#fight_button {
+  font-size: 20px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 10px 20px;
+  color: #a92e2e;
+  box-shadow: 0 0 5px #6f7178 inset, 0 0 15px #444549;
+  border-radius: 10px;
+  background-color: #e8e8e3;
+  border: none;
+  margin: 20px auto 0 auto;
+}
+#fight_button:hover {
+  color: red;
+}
+#rd1_form #fight_button {
+  font-size: 20px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 10px 20px;
+  color: #545b38;
+  box-shadow: 0 0 5px #6f7178 inset;
+  border-radius: 10px;
+  background-color: #cddd86;
+  border: none;
+  margin: 20px auto 0 auto;
+}
+#rd1_form #fight_button:hover {
+  color: #383e1f;
+}
+
+.char_sel {
+  height: 25px;
+  background-color: #e8e8e3;
+  font-family: 'Press Start 2P', sans-serif;
+  color:#424bb0;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+#rd1_form .char_sel {
+  background-color: #cddd86;
+  font-family: 'Press Start 2P', sans-serif;
+  color: #545b38;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.rd1_character {
+  position:absolute;
+  height: 100%;
+  width: 300px;
+  bottom:0px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.rd1_character p{
+  margin: 10px;
+}
+
+#player img{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+#enemy{
+  text-align: right;
+  right: 0px;
+
+}
+#enemy img{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+#select_attack{
+  text-align: center;
+  width: 200px;
+  margin: 20px auto;
+}
+
+#rd1_form {
+  width: 100%;
+  text-align: center
+}
+
+#char_img {
+  width: 500px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.char_show #char_img {
+  width: 50%;
+}
+
+#character_info {
+  padding-top: 15px;
+}
+#character_info li{
+  list-style: none;
+  padding: 20px 10px;
+  font-size: 18px;
+}
+
+#characters_page {
+  width: 710px;
+  text-align: center;
+  text-decoration: none;
+}
+#characters_page a {color: #545b38; text-decoration: none;}
+#characters_page a:hover{color: #383e1f;}
+#characters_page li{
+  font-size: 15px;
+  padding: 8px 0;
+  list-style: none;
+}
+
+
+
+#battle_outcome {
+  background-image: url("https://media.giphy.com/media/3s91l3GBTYZXNd0iKo/giphy.gif");
+  background-size: cover;
+  text-align: center;
+}
+
+#battle_outcome p{
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+#battle_outcome a{
+  font-size: 25px;
+  color: #545b38;
+}
+
+#battle_outcome a:hover{
+  color: #383e1f;
+}
+
+#winner_page{
+  text-align: center;
+}
+
+#winner_page img{
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+  width: 500px;
+}
+#title_page{
+  text-align: center;
+}
+
+#title_page img{
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  margin: auto;
+  width: 700px;
+}
+
+#conversations {
+  font-size: 12px;
+  text-align: center;
+  line-height: 40px;
+  list-style: none;
+  text-decoration: none;
+}
+
+#conversations .field{
+
+}
+#conversations input{
+  position: absolute;
+  bottom: 25px;
+  left: 300px;
+  font-size: 20px;
+  width: 150px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 10px 20px;
+  color: #545b38;
+  box-shadow: 0 0 5px #6f7178 inset;
+  border-radius: 10px;
+  background-color: #cddd86;
+  border: none;
+  margin-top: 5px;
+}
+#message_content {
+  font-size: 200px;
+}
+#message_body{
+  position: absolute;
+  bottom: 100px;
+  left: 75px;
+  width: 600px;
+  margin-top: 50px;
+  background-color: #cddd86;
+}

@@ -6,9 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
   </head>
 
   <body>
+    <audio src="/GuileTheme.mp3" autoplay preload="auto">
+      Your browser does not support the audio element.
+    </audio>
+    <div id="navbar" class="flex-container">
+      <ul>
+        <% if current_user %>
+          <li><%= link_to "Hello #{current_user.name}!", user_path(current_user) %></li>
+          <li><%= link_to "Log Out", logout_path, method: :destroy %></li>
+          <li><%= link_to 'New Game', new_game_path, method: 'get'%></li>
+          <li><%= link_to 'High Scores', users_path, method: 'get'%></li>
+          <li><%= link_to 'View Characters', characters_path, method: 'get'%></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Sign In", login_path %></li>
+        <% end %>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

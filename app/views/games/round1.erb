@@ -1,0 +1,28 @@
+<div class="game_window">
+
+  <div class ="rd1_character" id="player">
+    <p><%= @game.player_character.name %><p>
+    <p>Health: <%= @game.player_character.health %></p>
+    <img src="<%= @game.get_player_character.image_url %>" alt="">
+  </div>
+
+  <div class ="rd1_character" id="enemy">
+    <p><%= @game.enemy_character.name %></p>
+    <p>Health: <%= @game.enemy_character.health %></p>
+    <img src="<%= @game.get_enemy_character.image_url %>" alt="">
+  </div>
+
+  <div id="rd1_form">
+    <%= form_tag @battle %>
+      <input type="hidden" name="game[player_id]" value="<%= @game.player_character_id %>" />
+      <input type="hidden" name="game[enemy_id]" value="<%= @game.enemy_character_id %>" />
+      <input type="hidden" name="game[id]" value="<%= @game.id %>" />
+      <div id="select_attack">
+        <%= label_tag "Select Attack!" %>
+        <%= select_tag "attack", options_for_select(Game::FIGHT_MOVES), {:class => 'char_sel'} %>
+      </div>
+
+      <%= submit_tag "Fight!", :id => "fight_button" %>
+  </div>
+
+</div>

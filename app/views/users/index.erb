@@ -1,5 +1,16 @@
-<ul>
-  <%= @users.each do |user| %>
-    <li><%= user.name %></li>
-  <% end %>
-</ul>
+<div id="high_scores" class="game_window">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Wins</th>
+      <th>Losses</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.wins.to_i %></td>
+        <td><%= user.losses.to_i %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
